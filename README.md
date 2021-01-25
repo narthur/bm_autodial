@@ -23,7 +23,11 @@ For detailed explanation on how things work, checkout the [CLI Readme](https://g
 
 ## Repl.it Notes
 
-https://bmautodial.narthur.repl.co
+### Usage
+
+* Hit "Run" button to run tests (or, alternatively, run `npm run test` directly in the `Console` pane)
+* Run `npm run dev` in `Shell` pane to launch app
+* Open app at <https://bmautodial.narthur.repl.co>
 
 ### Database
 
