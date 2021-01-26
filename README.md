@@ -1,5 +1,69 @@
 # bm_autodial
 
+## Spec
+
+### rate autodialing
+
+#### Option 1
+
+`#autodial_rate_limit=10`
+
+Every midnight, set end rate to last 30 days average
+
+#### Option 2
+
+Change road when more than 30 days of buffer, increase rate by... something?
+
+#### Option 3
+
+`new_rate = min(avg(30d-data), rate * 1.1)`
+
+Or just:
+
+`new_rate = avg(30d-data)`
+
+No limit keyword
+
+`#autodial_rate`
+
+Do the math to get the rate right with weekends off so the rate doesn't always go down
+
+##### Pseudocode
+
+```
+for user in users:
+  goals = user.getGoals()
+  filtered_goals = filter(goals)
+  for goal in filtered_goals:
+    points = getMonthPoints(goal)
+    rate = avg(points)
+    goal.updateRate(rate)
+```
+
+#### Questions
+
+- Should it remember the state of the goal when its first initialized?
+- Should only apply to do-more goals?
+- Always operate at midnight, or at the goal's deadline?
+- Can it just operate on the road-end rate?
+- For do-less goals, at minimum you have to ensure that it won't go below the initial rate, and calculating the ... ??
+- At some point maybe flag when they've reached their target goal because that feels really good? Also a queue for people to think about changing their limit.
+
+### deadline autodialing
+
+Required:
+
+`#autodial_deadline_floor=8`
+`#autodial_deadline_ceiling=16`
+
+Optional:
+
+`#autodial_deadline_head=1`
+`#autodial_deadilne_tail=0.5`
+
+Deterministically re-distribute deadlines to maximize space
+between deadlines without violating constraints as possible.
+
 ## CLI Commands
 
 ``` bash

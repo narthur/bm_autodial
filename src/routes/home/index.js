@@ -19,6 +19,8 @@ const Home = () => {
     Click the button below to authenticate with Beeminder. Then configure your goals by adding <code>#autodial_max=10</code> to your fineprint.
     </p>
     <a href={authenticateUrl}>Authenticate</a>
+
+    <table></table>
 	</div>)
 };
 

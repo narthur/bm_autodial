@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "bm_autodial",
+  "name": "autodial",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "@replit/database": "^2.0.0",
+    "beeminder": "^1.6.5",
     "preact": "^10.3.2",
     "preact-render-to-string": "^5.1.4",
     "preact-router": "^3.2.1"
