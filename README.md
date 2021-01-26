@@ -1,5 +1,7 @@
 # bm_autodial
 
+DEPRECATED
+
 ## Spec
 
 ### rate autodialing
